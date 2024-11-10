@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://{{ request.get_host }}{% url 'django.contrib.sitemaps.views.index' %}
