@@ -14,7 +14,7 @@ from pathlib import Path
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -67,7 +67,7 @@ ROOT_URLCONF = "core.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -137,9 +137,17 @@ STATICFILES_FINDERS = [
 ]
 COMPRESS_PRECOMPILERS = (("text/x-scss", "django_libsass.SassCompiler"),)
 
+# Media files (Uploads)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 SITE_ID = 1
+
+# Authentication
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"

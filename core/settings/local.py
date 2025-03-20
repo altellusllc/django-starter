@@ -4,11 +4,26 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     "100.93.58.95",
+    "boneyard",
+    "boneyard.tail67c884.ts.net",
+    "localhost",
+    "127.0.0.1",
+]
+
+INTERNAL_IPS = [
+    "100.77.220.121",
+    "100.91.251.29",
+    "100.90.125.9",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     "http://100.93.58.95",
+    "http://boneyard",
+    "http://boneyard.tail67c884.ts.net",
+    "http://localhost:8001",
+    "http://127.0.0.1:8001",
 ]
+
 CSRF_COOKIE_SECURE = False
 
 INSTALLED_APPS = INSTALLED_APPS + [
