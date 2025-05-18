@@ -52,3 +52,12 @@ urlpatterns += [
         TemplateView.as_view(template_name="robots.txt", content_type="text/plain"),
     ),
 ]
+
+# Simple home page to demonstrate Webpack & Tailwind setup
+urlpatterns += [
+    path(
+        "",  # root URL
+        TemplateView.as_view(template_name="base.html"),
+        name="home",
+    ),
+]

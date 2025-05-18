@@ -16,5 +16,7 @@ restore.sh
 *.sql
 static/CACHE
 node_modules
+static/dist/
+webpack-stats.json
 !package-lock.json
 !package.json
